@@ -1,35 +1,59 @@
 /**
- * An Athlete is a robot that can also turn right and turn around.
- * By default, athletes are constructed at location 1,1 
- * facing North and holding an infinite supply of beepers.
+ * A Climber is an Athlete that can also climb up to the right
+ * and left as well as climb down to the right and left.
+ * 
+ * By default, climbers are constructed as athletes; however, 
+ * they can also be constructed using a single argument representing 
+ * the initial x location; in this case, they begin at the 
+ * location (x,0), facing North, with exactly one beeper.
  * 
  * @author Kent Collins
  * @version 11 November, 2014
  *
  */
 
-import edu.fcps.karel2.Robot;
 import edu.fcps.karel2.Display;
 
-public class Athlete extends Robot {
+public class Climber extends Athlete {
 	
-	public Athlete() {
-		super(1,1,Display.NORTH, Display.INFINITY);
+	public Climber() {
+		super();
 	}
 	
-	public Athlete(int x, int y, int dir, int beep) {
-		super(x, y, dir, beep);
+	public Climber(int x) {
+		super(x, 1, Display.NORTH, 1);
 	}
 	
-	public void turnAround() {
+	public void climbUpRight() {
 		turnLeft();
+		move();
+		move();
+		turnRight();
+		move();
+	}
+	
+	public void climbUpLeft() {
+		turnRight();
+		move();
+		move();
+		turnLeft();
+		move();
+	}
+	
+	public void climbDownRight() {
+		move();
+		turnRight();
+		move();
+		move();
 		turnLeft();
 	}
 	
-	public void turnRight() {
+	public void climbDownLeft() {
+		move();
 		turnLeft();
-		turnLeft();
-		turnLeft();
+		move();
+		move();
+		turnRight();
 	}
 
 }
