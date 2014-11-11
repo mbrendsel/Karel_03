@@ -1,9 +1,9 @@
 /**
 *
-* Description of the program goes here  // provide a brief description
-*
-* @author <Your Name here>  // replace <...> with your name
-* @version <date/of/completion> // replace <...> with the date
+* Two climbers navigate a mountain to bring treasure back to base
+* 
+* @author <...>
+* @version <...>
 */
 
 import edu.fcps.karel2.Display;
@@ -12,6 +12,6 @@ import edu.fcps.karel2.Robot;
 public class Lab03 {
 
      public static void main(String[] args) {
-          // TODO Your code goes here
+ 		//TODO Your code goes here
      }
 }
