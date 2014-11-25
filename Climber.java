@@ -7,36 +7,52 @@
  * the initial x location; in this case, they begin at the 
  * location (x,0), facing North, with exactly one beeper.
  * 
-* @author <...>
-* @version <...>
+* @Monica
+* @11/25/14
  *
  */
 
-import edu.fcps.karel2.Display;
-
-public class Climber extends Athlete {
-	
-	public Climber() {
-		super();
-	}
-	
-	public Climber(int x) {
-		super(x, 1, Display.NORTH, 1);
-	}
-	
-	public void climbUpRight() {
-		//TODO Your code goes here
-	}
-	
-	public void climbUpLeft() {
-		//TODO Your code goes here
-	}
-	
-	public void climbDownRight() {
-		//TODO Your code goes here
-	}
-	
-	public void climbDownLeft() {
-		//TODO Your code goes here
-	}
+public class Climber extends Athlete 
+{
+   public Climber()
+  {
+   super(8, 1, Display.NORTH, 1);
+  }
+   public Climber(int x, int y, int dir, int beep)
+  {
+   super(x, y, dir, beep);
+  }
+   public void climbUpLeft()
+  {
+   move();
+   move();
+   turnLeft();
+   move();
+   turnRight();
+  }
+   public void climbDownLeft()
+  {
+   turnRight();
+   move();
+   turnLeft();
+   move();
+   move();
+  }
+   public void climbUpRight()
+  {
+   move();
+   move();
+   turnRight();
+   move();
+   turnLeft();
+  }
+   public void climbDownRight()
+  {
+   turnLeft();
+   move();
+   turnRight();
+   move();
+   move();
+  }
+  
 }
